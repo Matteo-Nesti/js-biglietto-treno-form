@@ -1,52 +1,58 @@
 console.log('JS OK');
 //create variabili per costo biglietto eta` e km  
 const ticketPriceForKm = 0.21;
-
 const trainPrice = document.getElementById('ticket-train-price');
 const userAge = document.getElementById('ticket-user-age');
 const userKm = document.getElementById('ticket-user-km');
+const userName = document.getElementById('user-name');
 // creare variabili per prendere gli input dal DOM
 const inputName = document.getElementById('input-name');
 const inputAge = document.getElementById('input-age');
 const inputKm = document.getElementById('input-km');
 const button = document.getElementById('button');
-
-const km = inputKm.value;
-const age = inputAge.value;
-const name = inputName.value;
-console.log(name, age, km);
+const minor = document.getElementById('minor')
+const over65 = document.getElementById('over-65')
 
 let discount = 0;
-//prezzo del biglietto intero 
-const ticketTotalPrice = (km * ticketPriceForKm).toFixed(2);
-console.log(ticketTotalPrice + ' prezzo biglietto totale')
 
+//prezzo del biglietto intero 
+let km = inputKm.value;
+userKm.innerText = km + ' chilometri'
 // mettere nel DOM informazioni utente 
 
-trainPrice.innerText = ticketTotalPrice + ' €'
-userKm.innerText = km + ' Kilometri'
-userAge.innerText = ' ' + age + ' Anni'
 
+const ticketTotalPrice = (km * ticketPriceForKm).toFixed(2);
+console.log(ticketTotalPrice + ' prezzo biglietto totale')
 // cambio discount per eta`
 
-if (age >= 65) discount = 40;
-else if (age < 18) discount = 20;
+button.addEventListener('click', function(){ 
 
-// VERIFICA
-//logica principale
+const km = inputKm.value;
+userKm.innerText = km + ' chilometri'
 
-if (isNaN(km) || isNaN(age) || age <= 0 || km <= 0) {
-    alert('I valori inseriti non risultano validi')
-}
+const age = inputAge.value;
+userAge.innerText = age
 
-else {
+const name = inputName.value;
+userName.innerText = name
+
+    if (over65) discount = 40;
+    else if (minor) discount = 20;
+    
+    // VERIFICA
+    //logica principale
+    
     if (discount){
         const discountTicket = (ticketTotalPrice - (ticketTotalPrice * discount / 100)).toFixed(2) 
         console.log(discountTicket + ' discount' + discount + '%')
         
         trainPrice.innerHTML = ` ${discountTicket} € invece di <del>${ticketTotalPrice}</del> € `
     }
-}
+})
+
+
+trainPrice.innerText = ticketTotalPrice + ' €'
+
 
 
 
