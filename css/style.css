@@ -33,8 +33,8 @@ body {
     align-items: center;
 }
 
-.vh100 {
-    height: 100vh;
+.vh80 {
+    height: 80vh;
 }
 
 .main-bgc {
@@ -55,6 +55,14 @@ body {
 
 .fw-b {
     font-weight: bold;
+}
+
+.active {
+    display: flex;
+}
+
+.deactive {
+    display: none;
 }
 
 /******** TICKET BODY *********/
