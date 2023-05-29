@@ -12,46 +12,48 @@ const inputKm = document.getElementById('input-km');
 const button = document.getElementById('button');
 const minor = document.getElementById('minor')
 const over65 = document.getElementById('over-65')
-
 let discount = 0;
 
-//prezzo del biglietto intero 
-let km = inputKm.value;
-userKm.innerText = km + ' chilometri'
-// mettere nel DOM informazioni utente 
-
-
-const ticketTotalPrice = (km * ticketPriceForKm).toFixed(2);
-console.log(ticketTotalPrice + ' prezzo biglietto totale')
-// cambio discount per eta`
-
+// evento per richiamare gli input
 button.addEventListener('click', function(){ 
 
-const km = inputKm.value;
-userKm.innerText = km + ' chilometri'
-
-const age = inputAge.value;
-userAge.innerText = age
-
-const name = inputName.value;
-userName.innerText = name
-
-    if (over65) discount = 40;
-    else if (minor) discount = 20;
+    const name = inputName.value.trim();
+    console.log(name + ' nome')
+    userName.innerText = name
     
-    // VERIFICA
-    //logica principale
+    const km = inputKm.value;
+    console.log(km + ' km')
+    userKm.innerText = km + ' chilometri'
+
+    const age = inputAge.value;
+    console.log(age + ' fascia eta')
+    userAge.innerText = age
+
     
+    
+    const ticketTotalPrice = (km * ticketPriceForKm).toFixed(2);
+    console.log(ticketTotalPrice + ' prezzo biglietto totale')
+
+    const junior = minor.value
+    console.log(junior + ' value minor')
+    const senior = over65.value
+    console.log(senior + ' value over65')
+
+    if (age===junior) discount = 20
+    else if (age===senior) discount = 40
+
     if (discount){
         const discountTicket = (ticketTotalPrice - (ticketTotalPrice * discount / 100)).toFixed(2) 
         console.log(discountTicket + ' discount' + discount + '%')
         
         trainPrice.innerHTML = ` ${discountTicket} € invece di <del>${ticketTotalPrice}</del> € `
     }
+    else {
+        trainPrice.innerHTML = ticketTotalPrice + '€'
+    }
 })
 
 
-trainPrice.innerText = ticketTotalPrice + ' €'
 
 
 
