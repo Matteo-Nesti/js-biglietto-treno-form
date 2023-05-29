@@ -2,20 +2,21 @@ console.log('JS OK');
 //create variabili per costo biglietto eta` e km  
 const ticketPriceForKm = 0.21;
 
-const trainPrice = document.getElementById('train-price');
-const userAge = document.getElementById('user-age');
-const userKm = document.getElementById('user-km');
+const trainPrice = document.getElementById('ticket-train-price');
+const userAge = document.getElementById('ticket-user-age');
+const userKm = document.getElementById('ticket-user-km');
+// creare variabili per prendere gli input dal DOM
+const inputName = document.getElementById('input-name');
+const inputAge = document.getElementById('input-age');
+const inputKm = document.getElementById('input-km');
+const button = document.getElementById('button');
+
+const km = inputKm.value;
+const age = inputAge.value;
+const name = inputName.value;
+console.log(name, age, km);
 
 let discount = 0;
-
-//prompt per chidere dati all'utente
-
-const km = parseInt(prompt('quanti Kilometri si desidera percorrere?', 100));
-console.log(km + ' kilometri da percorrere');
-
-const age = parseInt(prompt('Quanti anni hai?', 20));
-console.log(age + ' eta\`');
-
 //prezzo del biglietto intero 
 const ticketTotalPrice = (km * ticketPriceForKm).toFixed(2);
 console.log(ticketTotalPrice + ' prezzo biglietto totale')

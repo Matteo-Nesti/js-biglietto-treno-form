@@ -10,46 +10,61 @@
 </head>
 <body>
     <main class="main-bgc">
-        <div class="container d-flex justify-center align-center vh100">
-            <div class="ticket-body">
-                <div class="header-ticket text-center">
-                    <h1>Ticket Train</h1>
-                </div>
-                <div class="main-ticket">
+        <div class="container">
+            <div class="info-ticket">
+                <input type="text" value="matteo nesti" id="input-name">
+                <input type="number" value="100" step="1" id="input-km">
+                <select name="" id="input-age">
+                    <option value="">minorenne</option>
+                    <option value="">adulto</option>
+                    <option value="">over 65</option>
+                </select>
 
-                    <div class="col-name border-black">
-                        <div class="name">
-                            <div class="fw-b m-b-1">Nome:</div>
-                            <span>Matteo Nesti</span>
+                <button id="button">Genera</button>
+                <button>Annulla</button>
+            </div>
+
+            <div class="d-flex justify-center align-center vh100">
+                <div class="ticket-body">
+                    <div class="header-ticket text-center">
+                        <h1>Ticket Train</h1>
+                    </div>
+                    <div class="main-ticket">
+
+                        <div class="col-name border-black">
+                            <div class="name">
+                                <div class="fw-b m-b-1">Nome:</div>
+                                <span>Matteo Nesti</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-age border-black">
-                        <div class="age">
-                            <div class="fw-b m-b-1">Eta`: </div>
-                            <span id="user-age" class=""></span>
+                        <div class="col-age border-black">
+                            <div class="age">
+                                <div class="fw-b m-b-1">Eta`: </div>
+                                <span id="ticket-user-age" class=""></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-km border-black">
-                        <div class="km">
-                            <div class="fw-b m-b-1">Biglietto valido per:</div>
-                            <span id="user-km" class=""></span>
+                        <div class="col-km border-black">
+                            <div class="km">
+                                <div class="fw-b m-b-1">Biglietto valido per:</div>
+                                <span id="ticket-user-km" class=""></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-price border-black">
-                        <div class="price text-center">
-                            <span id="train-price" class="fw-b"></span>
-                        </div>  
-                    </div>
-                    
-                    <div class="validation-ticket">
-                    </div>   
+                        <div class="col-price border-black">
+                            <div class="price text-center">
+                                <span id="ticket-train-price" class="fw-b"></span>
+                            </div>  
+                        </div>
+                        
+                        <div class="validation-ticket">
+                        </div>   
 
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>   
     </main>
 </body>
 </html>
